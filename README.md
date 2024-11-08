@@ -40,3 +40,4 @@ A Queen of Hearts from Alice in Wonderland-themed maze puzzle. I  want to use co
 List at least 2 inspirations/influences on your project. Provide links, please!
 - Portal / Portal 2 - https://www.thinkwithportals.com/
 - The Witness - https://store.steampowered.com/app/210970/The_Witness/
+- The Talos Principle - https://store.steampowered.com/app/257510/The_Talos_Principle/
