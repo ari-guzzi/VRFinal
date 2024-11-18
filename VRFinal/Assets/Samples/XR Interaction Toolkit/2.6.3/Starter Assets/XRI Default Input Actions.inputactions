@@ -1239,6 +1239,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "rotateMirror",
+                    "type": "Button",
+                    "id": "808c0d96-8e18-4936-89b4-b30005ba6506",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1472,6 +1481,17 @@
                     "action": "Grip Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ac664a8-1505-4c7e-84b0-41ab82a048db",
+                    "path": "*/{PrimaryTrigger}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "rotateMirror",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1577,15 +1597,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "rotateMirror",
-                    "type": "Button",
-                    "id": "96ccca48-7316-48b6-a91c-99c011721943",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1751,17 +1762,6 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "Generic XR Controller",
                     "action": "Scale Delta",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "502a07c0-7e2c-48c5-b772-9f1b44020d22",
-                    "path": "<XRController>{RightHand}/{PrimaryTrigger}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "rotateMirror",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
