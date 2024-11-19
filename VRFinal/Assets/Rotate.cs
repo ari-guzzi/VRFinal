@@ -19,6 +19,7 @@ public class Rotate : MonoBehaviour
     void Start()
     {
         rotateMirrorClockWise.action.performed += TurnClockWise;
+        //  rotateMirrorClockWise.action.ReadValue<float>()
         rotateMirrorCounterClockWise.action.performed += TurnCounterClockWise;
     }
 
