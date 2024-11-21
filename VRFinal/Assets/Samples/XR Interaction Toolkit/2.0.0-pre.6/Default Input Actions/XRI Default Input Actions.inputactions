@@ -205,6 +205,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "rotateCube",
+                    "type": "Button",
+                    "id": "acc7c030-9ba9-4d9f-a4f6-4f0743a7a558",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "resetButton",
+                    "type": "Button",
+                    "id": "9b8f5397-d490-4c10-bf97-8511a291edb8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -570,6 +588,28 @@
                     "action": "UI Press Value",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a0d2c19-434e-4d15-8a69-1844f6b1ec9b",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "rotateCube",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d517887-d26a-4cc2-bc6c-1aab669eeec9",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "resetButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -752,6 +792,15 @@
                     "name": "rotatingBackwards",
                     "type": "Button",
                     "id": "162948e4-b429-4c10-9d5e-5feacc3225e9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "pickup",
+                    "type": "Button",
+                    "id": "f52753fb-e3a4-40f6-bee8-169db0f60df2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1141,6 +1190,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "rotatingBackwards",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6db81770-8f7d-42bc-9712-5a0be9e244b7",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -16,8 +16,8 @@ TagManager:
   - mirrorMask
   - lasers
   - secretDoor
-  - 
-  - 
+  - PickUp
+  - MovingMirror
   - 
   - 
   - 
