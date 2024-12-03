@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PickUp : MonoBehaviour
 {
@@ -88,6 +89,8 @@ void moveObject()
     if (Vector3.Distance(heldCube.transform.position, holdArea.position) > 0.1f)
     {
         Vector3 moveDirection = holdArea.position - heldCube.transform.position;
+
+      
         heldCubeRb.AddForce(moveDirection * pickUpForce); 
     }
 }
