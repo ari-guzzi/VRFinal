@@ -6,62 +6,66 @@ public class LaserReflection : MonoBehaviour
 {
     public LineRenderer lineRenderer;
     public float maxLaserLength = 200f;
-    public Transform secretDoor; 
     public float moveDistance = 30f;
 
 void Start()
     {
-        lineRenderer.positionCount = 2;
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
     }
+
+ 
     void Update()
     {
-        ShootLaserFromPosition(transform.position, transform.forward);
+        List<Vector3> points = new List<Vector3>();
+        CastRay(transform.position, transform.forward, points);
+        UpdateLineRenderer(points);
     }
 
-        void ShootLaserFromPosition(Vector3 start, Vector3 direction)
+    void CastRay(Vector3 start, Vector3 direction, List<Vector3> points)
     {
+        points.Add(start);
         Ray ray = new Ray(start, direction);
         RaycastHit hit;
-        
+
         if (Physics.Raycast(ray, out hit, maxLaserLength))
         {
-            lineRenderer.positionCount = 2; // Just the original laser
-            lineRenderer.SetPosition(0, start);
-            lineRenderer.SetPosition(1, hit.point);
-
+            points.Add(hit.point);
+            if (hit.collider.CompareTag("target"))
+            {
+                MoveParent(hit.collider.gameObject);
+            }
             if (hit.collider.CompareTag("mirror"))
             {
                 Vector3 reflectedDirection = Vector3.Reflect(direction, hit.normal);
-                RaycastHit hitReflection;
-
-                if (Physics.Raycast(hit.point + reflectedDirection * 0.01f, reflectedDirection, out hitReflection, maxLaserLength))
+                if (points.Count < 50) // To prevent infinite loops, so only 50 reflfections are allowed
                 {
-                    lineRenderer.positionCount = 3; // Extend for the reflection
-                    lineRenderer.SetPosition(2, hitReflection.point);
-                }
-                else
-                {
-                    lineRenderer.positionCount = 3;
-                    lineRenderer.SetPosition(2, hit.point + reflectedDirection * maxLaserLength);
-                }
-                if (hitReflection.collider.CompareTag("target"))
-                {
-                    Debug.Log("hit target");
-                    // Move the secret door if it exists
-                    if (secretDoor != null && secretDoor.gameObject.layer == LayerMask.NameToLayer("secretDoor"))
-                    {
-                        secretDoor.Translate(Vector3.forward * moveDistance);
-                    }
+                    CastRay(hit.point + reflectedDirection * 0.01f, reflectedDirection, points);
                 }
             }
         }
         else
         {
-            lineRenderer.positionCount = 1; // No hit, just draw in one direction
-            lineRenderer.SetPosition(0, start);
-            lineRenderer.SetPosition(1, start + direction * maxLaserLength);
+            points.Add(start + direction * maxLaserLength);
+        }
+    }
+
+    void UpdateLineRenderer(List<Vector3> points)
+    {
+        lineRenderer.positionCount = points.Count;
+        lineRenderer.SetPositions(points.ToArray());
+    }
+
+    void MoveParent(GameObject target)
+    {
+        Transform parent = target.transform.parent;
+        if (parent != null)
+        {
+            parent.Translate(Vector3.forward * moveDistance);
+        }
+        else
+        {
+            Debug.LogWarning("Target has no parent object to move.");
         }
     }
 }
