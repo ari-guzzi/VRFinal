@@ -41,3 +41,18 @@ List at least 2 inspirations/influences on your project. Provide links, please!
 - Portal / Portal 2 - https://www.thinkwithportals.com/
 - The Witness - https://store.steampowered.com/app/210970/The_Witness/
 - The Talos Principle - https://store.steampowered.com/app/257510/The_Talos_Principle/
+
+## Sources
+- Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/surreal-skyboxes-254634
+- Textures:
+    - mirror border: https://www.textures.com/download/gilded-trim-0023/100101
+    - bush: https://www.turbosquid.com/FullPreview/738235
+    - grass: https://www.sketchuptextureclub.com/textures/nature-elements/vegetation/green-grass/clover-grass-texture-seamless-18207
+    - wand: https://freepics.ai/photo/3399/intricate-patterns-of-natural-wood-grain
+- Sounds:
+    - Background Music: https://zakiro101.itch.io/free-casual-game-music-pack-vol-2
+        - Tutorial: 4. The Cafe
+        - During Game: 2. Party Tonight
+    - Sound Effects: 
+        - Mirror Moving: https://pixabay.com/sound-effects/metal-door-creaking-closing-47323/
+        - Door Sliding: https://pixabay.com/sound-effects/sliding-sound-103631/

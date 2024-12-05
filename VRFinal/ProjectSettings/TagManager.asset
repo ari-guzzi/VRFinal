@@ -6,6 +6,7 @@ TagManager:
   tags:
   - mirror
   - target
+  - endTutorial
   layers:
   - Default
   - TransparentFX

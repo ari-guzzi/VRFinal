@@ -5,13 +5,16 @@ using DG.Tweening;
 
 public class CollisionScript : MonoBehaviour
 {
+    [SerializeField] 
+    private AudioSource myAudioSource;
     public Transform movingMirror; 
     public Transform mirrorPos;
-    //private float currentZ = movingMirror.position.z;
+    private float currentZ;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentZ = movingMirror.position.z;
         
     }
 
@@ -23,9 +26,9 @@ public class CollisionScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision Detected");
-        movingMirror.position = mirrorPos.position;
-
-        //movingMirror.DOMove(new Vector3(mirrorPos.position.x, mirrorPos.position.y, currentZ), 2f)
-        //    .SetEase(Ease.InQuad);
+        //movingMirror.position = mirrorPos.position;
+         movingMirror.DOMove(mirrorPos.position, 2f)
+            .SetEase(Ease.InQuad);
+        myAudioSource.Play();
     }
 }

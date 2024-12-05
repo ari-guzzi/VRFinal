@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class LaserReflection : MonoBehaviour
 {
     public LineRenderer lineRenderer;
     public float maxLaserLength = 200f;
-    public float moveDistance = 30f;
+    public float moveDistance = 10f;
+    [SerializeField] 
+    private AudioSource firstAudioSource;
+    [SerializeField] 
+    private AudioSource secondAudioSource;
+     [SerializeField] 
+    private AudioSource soundEffect;
 
 void Start()
     {
@@ -59,13 +65,25 @@ void Start()
     void MoveParent(GameObject target)
     {
         Transform parent = target.transform.parent;
+        Vector3 targetPosition = parent.position + parent.forward * moveDistance;
+        float duration = 1f;
         if (parent != null)
         {
-            parent.Translate(Vector3.forward * moveDistance);
+                parent.DOMove(targetPosition, duration).SetEase(Ease.Linear);
+
+            //parent.Translate(Vector3.forward * moveDistance);
+
+                if (parent.CompareTag("endTutorial"))
+                    {
+                        firstAudioSource.Pause();
+                        secondAudioSource.Play();
+                    }
+            soundEffect.Play();
         }
         else
         {
             Debug.LogWarning("Target has no parent object to move.");
         }
+        
     }
 }

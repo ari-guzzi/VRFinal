@@ -17,6 +17,7 @@ public class Rotate : MonoBehaviour
 
     private float currentRotationDirection = 0f; // -1 for counterclockwise, 1 for clockwise, 0 for no rotation
 
+
     private void OnEnable()
     {
         rotateMirrorClockWise.action.performed += _ => currentRotationDirection = 1f;
