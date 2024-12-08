@@ -500,3 +500,13 @@ Start importing Assets/treeMat.mat using Guid(362a95c29b8214c79b1fada9ad21d5a9) 
  -> (artifact id: 'e7a64d111584c538acd94f63fff4c47e') in 0.023036 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 447.641591 seconds.
+  path: Assets/treeMat.mat
+  artifactKey: Guid(362a95c29b8214c79b1fada9ad21d5a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/treeMat.mat using Guid(362a95c29b8214c79b1fada9ad21d5a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b7e5cffc7a918c81f9970cb6789bf48f') in 0.121255 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
