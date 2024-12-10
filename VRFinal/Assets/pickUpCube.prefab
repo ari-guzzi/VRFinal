@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.22, y: 0.45, z: -2.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,13 +121,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateCube: {fileID: -6125798161819614011, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   pickUpCube: {fileID: 8212745105388719021, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  pickUpRange: 10
+  pickUpRange: 1
   pickUpForce: 150
   holdArea: {fileID: 0}
   pickUpCubeObj: {fileID: 5790459357004497943}
-  player: {fileID: 0}
+  player: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
   holdPos: {fileID: 2293408550149486135}
   rotationAngle: 5
+  rightHand: {fileID: 0}
 --- !u!54 &8237664708012592608
 Rigidbody:
   m_ObjectHideFlags: 0

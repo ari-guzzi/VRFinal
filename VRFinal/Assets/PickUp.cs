@@ -8,12 +8,12 @@ public class PickUp : MonoBehaviour
 {
     [SerializeField] private InputActionReference rotateCube;
     [SerializeField] private InputActionReference pickUpCube;
-    [SerializeField] public float pickUpRange = 10f;
+    [SerializeField] public float pickUpRange = 1f;
     [SerializeField] public float pickUpForce = 150.0f;
     [SerializeField] private Transform holdArea;
     public GameObject pickUpCubeObj;
-    private GameObject heldCube;
-    private Rigidbody heldCubeRb;
+    private GameObject heldCube = null;
+    private Rigidbody heldCubeRb = null;
     public GameObject player;
     public Transform holdPos;
     public float rotationAngle = 5f;
@@ -35,8 +35,10 @@ public class PickUp : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(rightHand.position, rightHand.forward, out hit, pickUpRange))
             {
-                // hit.transform.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * pickUpForce * 20); 
-                PickUpCube(hit.transform.gameObject);     
+               GameObject target = hit.transform.gameObject;
+                Debug.Log("Hit: " + target.name);
+
+                    PickUpCube(target);  
             }
     }
     else {
