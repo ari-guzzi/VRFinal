@@ -6,7 +6,7 @@ public class LaserReflection : MonoBehaviour
 {
     public LineRenderer lineRenderer;
     public float maxLaserLength = 200f;
-    public float moveDistance = 10f;
+    public float moveDistance = 50f;
     [SerializeField] 
     private AudioSource firstAudioSource;
     [SerializeField] 
