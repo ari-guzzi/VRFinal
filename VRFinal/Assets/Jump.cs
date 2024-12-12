@@ -37,7 +37,7 @@ public bool testJump = false;
     // Update is called once per frame
     private void Update()
     {
-            float rightValue = rightTrigger.action.ReadValue<float>();
+    float rightValue = rightTrigger.action.ReadValue<float>();
     float leftValue = leftTrigger.action.ReadValue<float>();
     float right1Value = rightGrip.action.ReadValue<float>();
     float left2Value = leftGrip.action.ReadValue<float>();
@@ -54,12 +54,15 @@ public bool testJump = false;
         _playerVelocity.y += gravityValue * Time.deltaTime;
         _characterController.Move(_playerVelocity * Time.deltaTime);
 
+    Debug.Log("right trigger value: " + rightValue + "left trigger value: " + leftValue + "right grip value: " + right1Value + "left grip value: " + left2Value);
         if(rightValue > 0.5f && leftValue > 0.5f && right1Value > 0.5f && left2Value > 0.5f)  {
            ResetGame();
+           
         }
     }
     public void ResetGame()
     {
+        Debug.Log("resetting game");
         SceneManager.LoadScene("MainScene");
     }
 }

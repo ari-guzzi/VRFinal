@@ -643,7 +643,7 @@
                 {
                     "name": "",
                     "id": "177cb2eb-94c4-4c5d-9444-ce191e674461",
-                    "path": "<XRController>{LeftHand}/triggerButton",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
